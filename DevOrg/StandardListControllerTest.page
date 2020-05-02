@@ -1,0 +1,27 @@
+<apex:page standardController="Test1__c" recordSetVar="tests">
+    <apex:form >
+        
+        <apex:pageBlock title="リストビュー画面">
+            <apex:pageBlock title="リストビュー選択">
+                <apex:outputLabel value="ビューを選択："/>
+                <apex:selectList value="{!filterid}" size="1">
+                    <apex:actionSupport event="onchange" reRender="recordView"/>
+                    <apex:selectOptions value="{!listviewoptions}"/>
+                </apex:selectList>
+            </apex:pageBlock>
+            <apex:pageBlockTable value="{!tests}" var="t" id="recordView">
+                <apex:column value="{!t.Name}"/>
+                <apex:column headerValue="チェックボックス">
+                    <apex:inputField value="{!t.CheckBox__c}"/>
+                </apex:column>
+                <apex:column value="{!t.Datetime__c}"/>
+                <apex:column value="{!t.PickList__c}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!save}" value="保存"/>
+                <apex:commandButton action="{!previous}" value="前へ"/>
+                <apex:commandButton action="{!next}" value="次へ"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
