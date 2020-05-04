@@ -1,0 +1,22 @@
+<apex:page controller="CustomController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!search}" value="検索"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="検索条件" columns="1" rendered="{!!doSearch}">
+                <apex:inputField value="{!conditions.Text__c}" required="false"/>
+                <apex:inputField value="{!conditions.CheckBox__c}"/>
+                <apex:inputField value="{!conditions.Datetime__c }"/>
+                <apex:inputField value="{!conditions.PickList__c }"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!resultsList}" var="result"  rendered="{!doSearch}">
+                <apex:column value="{!result.Text__c}"/>
+                <apex:column value="{!result.CheckBox__c}"/>
+                <apex:column value="{!result.Datetime__c }"/>
+                <apex:column value="{!result.PickList__c }"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
