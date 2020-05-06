@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="レコード表示テスト">
+        <lightning-record-view-form
+        record-id={recordId}
+        object-api-name="Test1__c"
+        colums="2">
+        <div class="slds-theme_default">
+            <lightning-output-field field-name="Name">
+            </lightning-output-field>
+            <lightning-output-field field-name="Text__c">
+            </lightning-output-field>
+            <lightning-output-field field-name="CheckBox__c">
+            </lightning-output-field>
+            <lightning-output-field field-name="Datetime__c">
+            </lightning-output-field>
+            <lightning-output-field field-name="PickList__c">
+            </lightning-output-field>
+        </div>
+    </lightning-record-view-form>
+    </lightning-card>
+</template>
