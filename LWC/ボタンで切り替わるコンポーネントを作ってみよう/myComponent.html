@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="コンポーネント切り替えテスト">
+        <template if:true={isChangePanel}>
+            <p><span class="slds-text-heading_small">{count}回押しました</span></p>
+            <lightning-button label="押してください" class="slds-m-left_x-small" onclick={clickedButton}></lightning-button>
+        </template>
+        <template if:false={isChangePanel}>
+            <p><span class="slds-text-heading_small">{count}回以上は押せません</span></p>
+            <lightning-button disabled variant="destructive-text" label="もう押せないよ" class="slds-m-left_x-small" onclick={clickedButton}></lightning-button>
+        </template>
+    </lightning-card>
+</template>
