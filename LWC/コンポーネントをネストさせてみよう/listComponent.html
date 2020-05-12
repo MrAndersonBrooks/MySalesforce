@@ -1,0 +1,22 @@
+<template>
+    <template if:true={hasChanged}>
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+            <template for:each={tests} for:item="test">
+                <lightning-layout key={test.Id} size="3" class="slds-p-around_x-small">
+                    <lightning-card title={test.Name}>
+                        <div class="slds-p-horizontal_small">
+                            <div class="slds-media">
+                                <div class="slds-media__body">
+                                    <p class="slds-m-bottom_xx-small">{test.Text__c}</p>
+                                    <p class="slds-m-bottom_xx-small">{test.CheckBox__c}</p>
+                                    <p class="slds-m-bottom_xx-small">{test.Datetime__c}</p>
+                                    <p class="slds-m-bottom_xx-small">{test.PickList__c}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </lightning-layout>
+            </template>
+        </lightning-layout>    
+    </template>
+</template>
