@@ -1,0 +1,9 @@
+<template>
+    <template if:true={hasChanged}>
+        <lightning-datatable 
+        key-field="id"
+        data={tests}
+        columns={columns}>
+     </lightning-datatable>
+    </template>
+</template>
