@@ -1,0 +1,26 @@
+<template>
+    <lightning-tabset title="Boat Search Results" variant = "scoped">
+        <lightning-tab label="Gallery">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small" variant="brand"></lightning-spinner>
+            </template>
+            <div if:false={isLoading} class="slds-scrollable_y slds-grid">
+                <lightning-layout if:true={boats} horizontal-align="center" multiple-rows="true">
+                    <template for:each={boats} for:item="boat">
+                        <lightning-layout-item key={boat.Id} size="12" large-device-size="3" medium-device-size="4" small-device-size="6" padding="around-small">
+                            <c-boat-tile boat={boat} selected-boat-id={selectedBoatId} onboatselect={updateSelectedTile}></c-boat-tile>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </div>
+        </lightning-tab>
+      <lightning-tab label="Boat Editor">
+        <div class="slds-scrollable_y">
+            <lightning-datatable key-field="id" data={boats} columns={columns} onsave={handleSave} hide-checkbox-column="true"></lightning-datatable>
+        </div>
+      </lightning-tab>
+       <lightning-tab label="Boats Near Me">
+        <c-boats-near-me boat-type-id={boatTypeId}></c-boats-near-me>
+      </lightning-tab>
+    </lightning-tabset>
+  </template>
