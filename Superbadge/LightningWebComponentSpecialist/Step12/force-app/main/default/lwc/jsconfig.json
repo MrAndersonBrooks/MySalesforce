@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/boatSearchForm": [
+                "boatSearchForm/boatSearchForm.js"
+            ],
+            "c/boatSearch": [
+                "boatSearch/boatSearch.js"
+            ],
+            "c/boatTile": [
+                "boatTile/boatTile.js"
+            ],
+            "c/boatMap": [
+                "boatMap/boatMap.js"
+            ],
+            "c/boatsNearMe": [
+                "boatsNearMe/boatsNearMe.js"
+            ],
+            "c/boatSearchResults": [
+                "boatSearchResults/boatSearchResults.js"
+            ],
+            "c/fiveStarRating": [
+                "fiveStarRating/fiveStarRating.js"
+            ],
+            "c/boatAddReviewForm": [
+                "boatAddReviewForm/boatAddReviewForm.js"
+            ],
+            "c/boatReviews": [
+                "boatReviews/boatReviews.js"
+            ],
+            "c/boatDetailTabs": [
+                "boatDetailTabs/boatDetailTabs.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
