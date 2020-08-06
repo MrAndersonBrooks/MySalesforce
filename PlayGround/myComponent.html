@@ -1,0 +1,46 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-card>
+
+            <lightning-accordion allow-multiple-sections-open class="myAccordion" onsectiontoggle={handleToggleSection}>
+                <lightning-accordion-section name="Name" label="名前情報">
+                    <p>僕の名前はアンダーソンです。</p>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Age" label="年齢情報">
+                    <p>年齢は32歳です。</p>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Address" label="住所情報">
+                    <p>住んでいるのは関西です。</p>
+                </lightning-accordion-section>
+            </lightning-accordion>
+            <!-- <lightning-layout-item size="12" small-device-size="12">
+                <lightning-input label="入力1"></lightning-input>
+                <lightning-input label="入力2"></lightning-input>
+                <lightning-input label="入力3"></lightning-input>
+                <lightning-input label="入力4"></lightning-input>
+            </lightning-layout-item> -->
+            <!-- <lightning-tabset>
+                <lightning-tab label="Test1">
+                    <c-input-component onsearch={handleSearch}></c-input-component>    
+                    <c-list-component tests={tests} has-changed={hasChanged}></c-list-component>
+                </lightning-tab>
+                <lightning-tab label="Test2">
+                    <lightning-layout>
+                        <lightning-layout-item class="slds-align-middle slds-align_absolute-center">
+                            <lightning-combobox value={value} options={selectOptions} class="slds-align-middle" onchange={handleSelectOptions}></lightning-combobox>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <template if:true={hasChanged}>
+                        <lightning-card class="slds-is-relative"> 
+                            <lightning-datatable key-field="id" data={tests} columns={columns}></lightning-datatable>
+                        </lightning-card>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="Test3">
+                    <c-input-component onsearch={handleSearch}></c-input-component>    
+                    <c-list-component tests={tests} has-changed={hasChanged}></c-list-component>
+                </lightning-tab>
+            </lightning-tabset> -->
+        </lightning-card>
+    </lightning-layout>
+</template>
